@@ -1,5 +1,14 @@
 <html>
     <?php include "./assests/head.php"?>
+    <script>
+        $(document).ready( 
+            function() {
+                $('#table').DataTable( {
+                    "lengthMenu": [[10, 15, 25, 50, -1], [10, 15, 25, 50, "All"]]
+                } );
+            }
+        );
+    </script>
     <body>
         <?php include "./assests/header.php"?>
         <div class="wrapper">
@@ -14,6 +23,7 @@
                                 </i>
                             </a>
                         </div>
+                        <table id="table" class="table table-striped table-bordered">
                         <?php
                             require_once "dbconnect.php";
 
@@ -21,7 +31,7 @@
                             $sql = "SELECT * FROM people";
                             if($result = mysqli_query($conn, $sql)) {
                                 if(mysqli_num_rows($result) > 0) {
-                                    echo '<table class="table table-bordered table-striped">';
+                                    //echo '<table id="table" class="table table-bordered table-striped">';
                                         echo "<thead>";
                                             echo "<tr>";
                                                 echo "<th>#</th>";
@@ -47,7 +57,7 @@
                                             echo "</tr>";
                                         }
                                         echo "</tbody>";
-                                    echo "</table>";
+                                    //echo "</table>";
 
                                     // free the result set
                                     $result -> free();
@@ -59,6 +69,7 @@
                             }
 
                         ?>
+                        </table>
                     </div>
                 </div>
             </div>
