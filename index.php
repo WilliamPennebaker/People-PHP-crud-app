@@ -4,7 +4,12 @@
         $(document).ready( 
             function() {
                 $('#table').DataTable( {
-                    "lengthMenu": [[10, 15, 25, 50, -1], [10, 15, 25, 50, "All"]]
+                    "lengthMenu": [[10, 15, 25, 50, -1], [10, 15, 25, 50, "All"]],
+                    "bAutoWidth": false,
+                    columnDefs: [
+                        { target: 0, visible: false},
+                        { target: 5, width: "30px"}
+                    ]
                 } );
             }
         );
