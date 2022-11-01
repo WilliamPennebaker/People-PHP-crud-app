@@ -102,51 +102,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
     <?php include "./assests/head.php" ?>
     <body>
-        <?php include "./assests/header.php" ?>
-
         <div class="wrapper">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="mt-5"> Update Record </h2>
-                    <p> Please edit the values in this form to update persons record. </p>
-                </div>
-
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <div class="col-md-8">
-                        <div class="row">
-                            <input type="hidden" value="<?php echo $id ?>" name="id"/>
-                                <div class="col-md-12">
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text">Name</span>
-                                        <input name="name" type="text" class="form-control" value="<?php echo $name; ?>">
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-12">
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text">Email</span>
-                                        <input name="email" type="email" class="form-control" value="<?php echo $email; ?>">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text">Phone</span>
-                                        <input name="phone" type="text" class="form-control" value="<?php echo $phone; ?>">
-                                    </div>
-                                </div>
-                        </div>
-                        <?php if(isset($name_err)) echo "<p>" . $name_err . "</p>" ?>
-                        <?php if(isset($email_err)) echo "<p>" . $email_err . "</p>" ?>
-                        <?php if(isset($phone_err)) echo "<p>" . $phone_err . "</p>" ?>
-                        <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
-                        <a href="index.php" class="btn btn-secondary">Cancel</a>
+            <div class="container-fluid">
+            <?php include "./assests/header.php" ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="mt-3"> Update Record </h2>
+                        <p> Please edit the values in this form to update persons record. </p>
                     </div>
-                </form>
-                
+
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <div class="col-md-8">
+                            <div class="row">
+                                <input type="hidden" value="<?php echo $id ?>" name="id"/>
+                                    <div class="col-md-12">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">Name</span>
+                                            <input name="name" type="text" class="form-control" value="<?php echo $name; ?>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">Email</span>
+                                            <input name="email" type="email" class="form-control" value="<?php echo $email; ?>">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">Phone</span>
+                                            <input name="phone" type="text" class="form-control" value="<?php echo $phone; ?>">
+                                        </div>
+                                    </div>
+                            </div>
+                            <?php if(isset($name_err)) echo "<p>" . $name_err . "</p>" ?>
+                            <?php if(isset($email_err)) echo "<p>" . $email_err . "</p>" ?>
+                            <?php if(isset($phone_err)) echo "<p>" . $phone_err . "</p>" ?>
+                            <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                            <a href="index.php" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            <?php include "./assests/footer.php" ?>
             </div>
         </div>
-
-        <?php include "./assests/footer.php" ?>
     </body>
 </html>

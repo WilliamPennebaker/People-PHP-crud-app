@@ -15,12 +15,12 @@
         );
     </script>
     <body>
-        <?php include "./assests/header.php"?>
         <div class="wrapper">
             <div class="container-fluid">
+                <?php include "./assests/header.php"?>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="mt-5 mb-3 clearfix">
+                        <div class="mt-3 mb-3 clearfix">
                             <h2 class="pull-left">People</h2>
                             <a href="create.php" class="btn btn-success pull-right">
                                 <i class="fa fa-plus">
@@ -77,8 +77,8 @@
                         </table>
                     </div>
                 </div>
+                <?php include "./assests/footer.php"?>
             </div>
         </div>
-        <?php include "./assests/footer.php"?>
     </body>
 </html>
